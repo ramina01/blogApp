@@ -16,8 +16,12 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/',[pagesController::class,'index']);
 
-Route::get('/blog',postsController::class);
-
+Route::get('/blog',[postsController::class,'index']);
+Route::get('/blog/create',[postsController::class,'create']);
+Route::Post('/blog',[postsController::class,'store']);
+Route::get('/blog/{slug}', [PostsController::class, 'show']);
+Route::get('/blog/{slug}/edit', [PostsController::class, 'edit']);
+Route::put('/blog/{slug}', [PostsController::class, 'Update']);
 
 Auth::routes();
 
