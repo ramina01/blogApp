@@ -30,7 +30,8 @@
     @foreach($posts as $post)
         <div class="sm:grid grid-cols-2 gap-20 w-4/5 mx:auto py-15 border-b border-white">
             <div class="pl-20">
-                <img src="https://cdn.pixabay.com/photo/2017/07/02/19/24/dumbbells-2465478_1280.jpg" width="500" alt="">
+                <img src="{{ asset('images/' . $post->img_path) }}" width="500" alt="">
+{{--                dd({{ asset('images/' . $post->img_path) }});--}}
             </div>
 
             <div>
