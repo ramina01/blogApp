@@ -38,6 +38,18 @@ class CommentController extends Controller
     }
 
 
+    public function flag($comment_id)
+    {
+        $comment = Comment::find($comment_id);
+
+        if ($comment) {
+            // Mark the comment as flagged
+            $comment->update(['is_flagged' => true]);
+        }
+
+        return redirect()->back()->with('message', 'Comment flagged as inappropriate.');
+    }
+
 
 }
 
