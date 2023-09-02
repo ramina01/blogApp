@@ -79,9 +79,12 @@ class postsController extends Controller
      */
     public function show($slug)
     {
-        return view('blog.show')
-            ->with('post', Post::where('slug',$slug)->first());
+        $post = Post::where('slug', $slug)->with('comments')->firstOrFail();
+
+
+        return view('blog.show', compact('post'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
