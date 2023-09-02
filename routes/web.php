@@ -3,6 +3,7 @@
 use App\Http\Controllers\pagesController;
 use App\Http\Controllers\postsController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,5 +26,6 @@ Route::put('/blog/{slug}', [PostsController::class, 'Update']);
 
 Auth::routes();
 
-Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/profile', [ProfileController::class,'index'])->name('profile');
